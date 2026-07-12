@@ -1,0 +1,37 @@
+# barebones HTML file to run the calculator and allow user inputs
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Min Depth Calculator</title>
+</head>
+<body>
+    <h1>Min Depth Calculator</h1>
+    <form method="post" action="/calculate">
+        <label>Aperture Diameter (D): <input type="number" name="D" step="any" required></label><br>
+        <label>Altitude: <input type="number" name="altitude" step="any" required></label><br>
+        <label>Airmass: <input type="number" name="airmass" step="any" required></label><br>
+        <label>Quantum Efficiency (QE): <input type="number" name="QE" step="any" required></label><br>
+        <label>Exposure Time: <input type="number" name="exposure_time" step="any" required></label><br>
+        <label>Read Noise: <input type="number" name="read_noise" step="any" required></label><br>
+        <label>Sky Brightness: <input type="number" name="sky_brightness" step="any" required></label><br>
+        <label>Pixel Size: <input type="number" name="pixel_size" step="any" required></label><br>
+        <label>Focal Length: <input type="number" name="focal_length" step="any" required></label><br>
+        <label>Aperture Radius (pix): <input type="number" name="aperture_radius_pix" step="any" required></label><br>
+        <label>Dark Current Rate: <input type="number" name="dark_current_rate" step="any" required></label><br>
+        <label>Full Well: <input type="number" name="full_well" step="any" required></label><br>
+        <label>Vega Zero Point: <input type="number" name="vega_zp" step="any" required></label><br>
+        <label>Efficiency (eff): <input type="number" name="eff" step="any" required></label><br>
+        <label>Weighted Efficiency (weff): <input type="number" name="weff" step="any" required></label><br>
+        <label>FWHM Optimistic: <input type="number" name="fwhm_optimistic" step="any" required></label><br>
+        <label>FWHM Pessimistic: <input type="number" name="fwhm_pessimistic" step="any" required></label><br>
+        <label>Magnitude Min: <input type="number" name="magnitude_min" step="any" required></label><br>
+        <label>Magnitude Max: <input type="number" name="magnitude_max" step="any" required></label><br>
+        <button type="submit">Calculate</button>
+    </form>
+
+    {% if result is not none %}
+        <h2>Result: {{ result }}</h2>
+    {% endif %}
+</body>
+</html>
